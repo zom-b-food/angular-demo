@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+
+    <description>angular-demo</description>
+    <display-name>angular-demo</display-name>
+
+     <context-param>
+    <param-name>context-root</param-name>
+    <param-value>angular-demo</param-value>
+  </context-param>
+
+    <servlet>
+        <servlet-name>XmlServlet</servlet-name>
+        <servlet-class>xml.XmlServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>XmlServlet</servlet-name>
+        <url-pattern>/xml.XmlServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>XmlServletServer</servlet-name>
+        <servlet-class>xml.XmlServletServer</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>XmlServletServer</servlet-name>
+        <url-pattern>/xml.XmlServletServer</url-pattern>
+    </servlet-mapping>
+
+   
+    <servlet>
+        <servlet-name>authEmail</servlet-name>
+        <servlet-class>authenticate.authEmail</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>authEmail</servlet-name>
+        <url-pattern>/authenticate.authEmail</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>demoEmail</servlet-name>
+        <servlet-class>authenticate.demoEmail</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>demoEmail</servlet-name>
+        <url-pattern>/authenticate.demoEmail</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SayWhat</servlet-name>
+        <servlet-class>feedback.SayWhat</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SayWhat</servlet-name>
+        <url-pattern>/feedback.SayWhat</url-pattern>
+    </servlet-mapping>
+   
+    <servlet>
+        <servlet-name>SayWhatServer</servlet-name>
+        <servlet-class>feedback.SayWhatServer</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SayWhatServer</servlet-name>
+        <url-pattern>/feedback.SayWhatServer</url-pattern>
+    </servlet-mapping>
+
+   <!-- <resource-ref>
+        <description>DB Demo Connection</description>
+        <res-ref-name>jdbc/demo</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>-->
+
+    <!-- Security roles referenced by this web application
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Pages requiring HTTPS</web-resource-name>
+      <url-pattern>/db_demo/*</url-pattern>
+    </web-resource-collection>
+
+    <user-data-constraint>
+      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+
+ -->
+    <welcome-file-list>
+        <welcome-file>menu.jsp</welcome-file>
+    </welcome-file-list>
+
+   <!-- <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <page-encoding>UTF-8</page-encoding>
+            <include-prelude>/sitewide/fragments/prelude.jspf</include-prelude>
+            <trim-directive-whitespaces>true</trim-directive-whitespaces>
+        </jsp-property-group>
+    </jsp-config>-->
+</web-app>
